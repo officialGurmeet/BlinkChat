@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 /* ───── Floating Chat Bubble Component ───── */
@@ -149,18 +150,21 @@ export const HeroSection = () => {
                             className="absolute top-[10%] right-[5%] w-[85%] h-[85%] border-[1.5px] border-zinc-900 dark:border-zinc-500 rounded-full opacity-40"
                         />
 
-                        {/* Person Image (Placeholder that expects a transparent PNG cutout) */}
+                        {/* Person Image */}
                         <motion.div
                             initial={{ y: 50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.7, delay: 0.2 }}
                             className="relative z-10 w-full h-full flex items-end justify-center"
                         >
-                            {/* NOTE: You should replace this with the transparent PNG provided by the users */}
-                            <div className="w-[85%] h-[95%] bg-zinc-200 dark:bg-zinc-800 rounded-b-full rounded-t-[40%] flex items-center justify-center text-zinc-400 overflow-hidden shadow-2xl border-4 border-white dark:border-zinc-900 border-b-0 relative">
-                                <span className="text-sm font-medium z-10">Image Placeholder (Replace with transparent PNG)</span>
-                                {/* Generic silhouette gradient for better demo visualization */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-zinc-400 to-transparent opacity-20" />
+                            <div className="w-[85%] h-[95%] overflow-hidden rounded-b-full rounded-t-[40%] shadow-2xl border-4 border-white dark:border-zinc-900 border-b-0 relative">
+                                <Image 
+                                    src="/images/hero-person.png" 
+                                    alt="BlinkChat Hero" 
+                                    fill
+                                    className="object-cover object-top"
+                                    priority
+                                />
                             </div>
                         </motion.div>
 
