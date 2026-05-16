@@ -1,4 +1,4 @@
-import { PrismaClient, RoomType } from "../generated/prisma";
+import { PrismaClient, RoomType } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
